@@ -30,3 +30,9 @@ gulp.task('js', () =>
   }))
   .pipe(gulp.dest('./dist/js'))
 );
+
+gulp.task('watch', () => {
+  gulp.watch(['./src/pug/**/*.pug', '!./src/pug/**/_*.pug'], ['pug']);
+  gulp.watch('./src/sass/**/*.scss', ['sass']);
+  gulp.watch('./src/js/**/*.js', ['js']);
+});
